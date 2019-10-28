@@ -37,4 +37,15 @@ describe('server/app.js', function() {
       done();
     });
   });
+
+  it('page says This is the string you are looking for', (done) => {
+    chai.request(server)
+      .get('/')
+      .end((err, res) => {
+        expect(err).not.exist;
+        expect(JSON.stringify(res.text)).to.contain('This is the string you are looking for');
+        done();
+      });
+    });
+
 })
