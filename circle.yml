@@ -9,7 +9,10 @@ jobs:
 
     steps:
       - checkout
-      
+      steps:
+      - add_ssh_keys:
+      fingerprints:
+        - "d4:f0:db:ba:91:db:c4:9d:77:bd:3b:4b:2a:79:bb:27"
       # Test
       # Download and cache dependencies
       - restore_cache:
